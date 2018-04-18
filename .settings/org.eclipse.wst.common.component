@@ -2,7 +2,13 @@
     <wb-module deploy-name="GreenBottle_WebApp">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+<<<<<<< HEAD
         <property name="java-output-path" value="/GreenBottle_WebApp/build/classes"/>
         <property name="context-root" value="GreenBottle"/>
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+        <property name="java-output-path" value="/GreenBottle_WebApp/build/classes"/>
+        <property name="context-root" value="greenBottle"/>
+>>>>>>> f0d751af23450c785f9ec26de647a66d45793ccd
     </wb-module>
 </project-modules>
