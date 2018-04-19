@@ -20,10 +20,10 @@
 					Already registered? <a href="#">Sign In</a>
 				</p>
 			</form>
-			<form class="login-form">
-				<input type="text" placeholder="username" /> <input type="password"
-					placeholder="password" /> <a href="accueil.jsp">Accueil</a>
-				<button>login</button>
+			<form class="login-form" method="post" action="loginServlet">
+				<input type="text" name="username" placeholder="username" /> 
+				<input type="password" name="password" placeholder="password" />
+				<button type="submit">login</button>
 				<p class="message">
 					Not registered? <a id="testClick" href="#">Create an account</a>
 				</p>
