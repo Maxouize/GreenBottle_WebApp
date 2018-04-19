@@ -11,4 +11,15 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
 	</servlet-mapping>
+		<display-name>consulterDemande</display-name>
+	<servlet>
+		<description></description>
+		<display-name>consulterDemandeServlet</display-name>
+		<servlet-name>consulterDemandeServlet</servlet-name>
+		<servlet-class>com.greenBottle.servlet.ConsulterDemandeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConsulterDemandeServlet</servlet-name>
+		<url-pattern>/ConsulterDemandeServlet</url-pattern>
+	</servlet-mapping>
 </web-app>
