@@ -11,8 +11,17 @@ public class Client {
 	private String ville;
 	private String adresseMail;
 	private String password;	
+	private String complement;
 	
 	
+	public String getComplement() {
+		return complement;
+	}
+
+	public void setComplement(String complement) {
+		this.complement = complement;
+	}
+
 	public String getNom() {
 		return nom;
 	}
