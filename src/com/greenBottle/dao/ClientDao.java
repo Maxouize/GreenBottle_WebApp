@@ -16,9 +16,9 @@ import com.greenBottle.bean.Client;
 
 public class ClientDao {
 
-Properties prop = new Properties();
+static Properties prop = new Properties();
 
-	public void fillClientWithInfos(ResultSet rs, Client client) throws SQLException{
+	public static void fillClientWithInfos(ResultSet rs, Client client) throws SQLException{
 		while(rs.next()){
 		client.setNom(rs.getString("nom"));
 		client.setPrenom(rs.getString("prenom"));
@@ -32,28 +32,30 @@ Properties prop = new Properties();
 		}
 	}
 	
-	public Client getClientByMailAndPassword(String mail) throws SQLException, IOException{
-		FileInputStream in = new FileInputStream(new File("resources/sqlRequests.properties"));
-		prop.load(in);
+	public static Client getClientByMailAndPassword(String mail, String password) throws SQLException, IOException{
+//		FileInputStream in = new FileInputStream(new File("resources/sqlRequests.properties"));
+//		prop.load(in);
 		Client client = new Client();
-		Connection conn = SqlConnection.getConnection();
+		Connection conn = SqlConnexion.getConnection();
 		Statement st = conn.createStatement();
-		ResultSet rs = st.executeQuery(prop.getProperty("sql.selectClientFromMailAndPassword")+"'"+mail+"'");
+		ResultSet rs = st.executeQuery("SELECT * FROM clients WHERE email="+"'"+mail+"'");
 		fillClientWithInfos(rs, client);
 		st.close();
 		return client;
 	}
 	
-	public Client getClientById(String id) throws SQLException, IOException{
-		Connection conn = SqlConnection.getConnection();
+	public static boolean isClient(String username, String password) throws SQLException, IOException{
+		boolean isClient;
+		Connection conn = SqlConnexion.getConnection();
 		Statement st = conn.createStatement();
-		ResultSet rs = st.executeQuery("SELECT * FROM prestation WHERE idFacture="+id);
-		Client client = new Client();
-		while(rs.next()){
-			client.setNom(rs.getString("nom"));
+		ResultSet rs = st.executeQuery("SELECT * FROM clients WHERE email='"+username+"' AND mot_de_passe='"+password+"'");
+		if(rs.next()){
+			isClient=true;
 		}
-		st.close();
-		return client;
+		else{
+			isClient=false;
+		}
+		return isClient;
 	}
 	
 	public void addClient(Client client) throws SQLException{
