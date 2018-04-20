@@ -1,7 +1,4 @@
 package com.greenBottle.dao;
-import com.greenBottle.bean.Retrait;
-import com.greenBottle.utils.SqlConnexion;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.greenBottle.bean.Client;
+import com.greenBottle.bean.Retrait;
+import com.greenBottle.utils.SqlConnexion;
 
 public class RetraitDao {
 	
@@ -23,7 +22,7 @@ public class RetraitDao {
 
 	public List<Retrait> getRetraitsFromClientId(Client client){
 		List<Retrait> listeRetraits = new ArrayList<Retrait>();
-		int idClient = client.getId()
+        int idClient = client.getId();
 		Connection conn = SqlConnexion.getConnection();
 		Statement st = conn.createStatement();
 		ResultSet rs = st.executeQuery("SELECT * FROM clients WHERE email='"+username+"' AND mot_de_passe='"+password+"'");

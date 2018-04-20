@@ -98,3 +98,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
+background-image-hide {
+    width: 100%;
+    position: absolute !important;
+    height: 100%;
+    left: 0;
+    z-index: 0 !important;
+    top: 0;
+    margin: auto;
+    background-position: center center
