@@ -9,6 +9,7 @@
 	rel="stylesheet"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
+<link href="css/demande.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>GreenBottle</title>
 </head>
@@ -25,9 +26,9 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Acceuil</a></li>
+				<li class="active"><a href="accueil.jsp">Acceuil</a></li>
 				<li><a href="creerDemande.jsp">Nouvelle Demande</a></li>
-				<li><a href="consulterDemande.jsp">Mes demandes</a></li>
+				<li><a href="toto">Mes demandes</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>

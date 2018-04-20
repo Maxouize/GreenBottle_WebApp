@@ -19,13 +19,13 @@ import com.greenBottle.dao.RetraitDao;
  * Servlet implementation class consulterDemandeServlet
  */
 @WebServlet("/consulterDemandeServlet")
-public class consulterDemandeServlet extends HttpServlet {
+public class ConsulterDemandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public consulterDemandeServlet() {
+    public ConsulterDemandeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,6 +45,7 @@ public class consulterDemandeServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.getSession().setAttribute("listeRetraits", listeRetraits);
+		request.getRequestDispatcher("/consulterDemande.jsp").forward(request, response);
 	}
 
 	/**

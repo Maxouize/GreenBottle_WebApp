@@ -11,8 +11,9 @@
 <body>
 	<jsp:include page="header.jsp" />
 <c:forEach items="${listeRetraits}" var="Retrait">
-    <p><c:out value="${Retrait.dateRetrait}" /> !</p>
+<p><c:out value="${Retrait.dateRetrait}" /> !</p>
 </c:forEach>
-<c:out value="${client.nom}"></c:out>	
+<c:out value="${client.nom}" />
+
 </body>
 </html>
