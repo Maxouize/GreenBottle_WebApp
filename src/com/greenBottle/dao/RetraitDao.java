@@ -50,4 +50,12 @@ public class RetraitDao {
 		ps.setString(6, retrait.getStatut());
 		ps.executeUpdate();
 	}
+	
+	public static void updateRetrait(Retrait retrait) throws IOException, SQLException{
+		Connection conn = SqlConnexion.getConnection();
+		PreparedStatement ps = conn.prepareStatement("UPDATE retraits SET statut=? WHERE id_retrait=?");
+		ps.setString(1, retrait.getStatut());
+		ps.setInt(2, retrait.getId());
+		ps.executeUpdate();
+	}
 }

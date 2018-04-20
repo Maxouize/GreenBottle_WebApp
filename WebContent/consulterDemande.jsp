@@ -22,12 +22,14 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<input type="hidden" value="${Retrait.id}" />
 					<th scope="col">Date</th>
 					<th scope="col">Heure</th>
 					<th scope="col">Poids</th>
 					<th scope="col">Commentaire</th>
 					<th scope="col">Statut</th>
+					<c:if test = "${Retrait.statut == 'en attente'}">
+					<th> </th>
+					</c:if>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,6 +40,13 @@
 						<td>${Retrait.poids}</td>
 						<td>${Retrait.commentaire}</td>
 						<td>${Retrait.statut}</td>
+					<c:if test = "${Retrait.statut == 'en attente'}">
+					<form action=annulerDemandeServlet method="POST">
+					<input type="hidden" value="${Retrait.id}" name="idRetrait" />
+					<td><button type="submit">Annuler la demande</button>
+					</td>
+					</form>
+					</c:if>
 					</tr>
 				</c:forEach>
 

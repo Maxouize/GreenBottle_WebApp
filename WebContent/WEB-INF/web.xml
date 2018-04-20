@@ -12,7 +12,7 @@
     <url-pattern>/consultation</url-pattern>
   </servlet-mapping>
   
-    <display-name>modifierProfil</display-name>
+  <display-name>modifierProfil</display-name>
   <servlet>
     <description></description>
     <display-name>ModifierProfilServlet</display-name>
@@ -23,4 +23,17 @@
     <servlet-name>ModifierProfilServlet</servlet-name>
     <url-pattern>/modifierProfil</url-pattern>
   </servlet-mapping>
+    
+    <display-name>AnnulerDemandeServlet</display-name>
+    <servlet>
+    <description></description>
+    <display-name>AnnulerDemandeServlet</display-name>
+    <servlet-name>AnnulerDemandeServlet</servlet-name>
+    <servlet-class>com.greenBottle.servlet.AnnulerDemandeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnnulerDemandeServlet</servlet-name>
+    <url-pattern>/annulerDemandeServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

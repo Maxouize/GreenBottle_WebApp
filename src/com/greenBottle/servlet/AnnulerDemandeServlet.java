@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.greenBottle.bean.Client;
-import com.greenBottle.dao.ClientDao;
+import com.greenBottle.bean.Retrait;
+import com.greenBottle.dao.RetraitDao;
 
 /**
- * Servlet implementation class ModifierProfilServlet
+ * Servlet implementation class AnnulerDemandeServlet
  */
-@WebServlet("/ModifierProfilServlet")
-public class ModifierProfilServlet extends HttpServlet {
+@WebServlet("/AnnulerDemandeServlet")
+public class AnnulerDemandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModifierProfilServlet() {
+    public AnnulerDemandeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,23 +39,17 @@ public class ModifierProfilServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Client client = (Client)request.getSession().getAttribute("client");
-		client.setNom(request.getParameter("nom"));
-		client.setPrenom(request.getParameter("prenom"));
-		client.setAdresseMail(request.getParameter("mail"));
-		client.setNumeroAdresse(Integer.parseInt(request.getParameter("numero")));
-		client.setNomVoie(request.getParameter("adresse"));
-		client.setVille(request.getParameter("ville"));
-		client.setCodePostal(request.getParameter("codePostal"));
+		Retrait retrait = new Retrait();
+		System.out.println(request.getParameter("idRetrait"));
+		retrait.setId(Integer.parseInt(request.getParameter("idRetrait")));
+		retrait.setStatut("Terminé");
 		try {
-			ClientDao.updateClient(client);
-			request.setAttribute("clientInvalide", "Profil mis à jour avec succès");
-			
+			RetraitDao.updateRetrait(retrait);
+			response.sendRedirect("/ConsulterDemandeServlet");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("modifierProfil.jsp").forward(request, response);
 	}
 
 }

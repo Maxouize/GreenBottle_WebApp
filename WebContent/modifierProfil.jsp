@@ -17,7 +17,6 @@
 				<label>Nom: </label><input type="text" name="nom" value="<c:out value="${client.nom}"/>" /> 
 				<label>Prenom </label><input type="text" name="prenom" value="<c:out value="${client.prenom}"/>"/> 
 				<label>Mail: </label><input type="text" name="mail"value="<c:out value="${client.adresseMail}"/>"/> 
-				<label>Mot de passe: </label><input type="password" name="password"value="<c:out value="${client.password}"/>"/>
 				<div>
 					<label>Numero: </label><input type="text" placeholder="n°" name="numero" style="width: 20%" value="<c:out value="${client.numeroAdresse}"/>"/>
 					 <label>Adresse: </label><input	type="text" placeholder="adresse" name="adresse" style="width: 78%" value="<c:out value="${client.nomVoie}"/>"/>
