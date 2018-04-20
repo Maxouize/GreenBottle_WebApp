@@ -19,6 +19,8 @@ public class RetraitDao {
 		retrait.setHeureRetrait(rs.getTime("heure_retrait").toString());
 		retrait.setId(rs.getInt("id_retrait"));
 		retrait.setStatut(rs.getString("statut"));
+		retrait.setPoids(rs.getInt("poids"));
+		retrait.setCommentaire(rs.getString("commentaire"));
 		return retrait;
 	}
 

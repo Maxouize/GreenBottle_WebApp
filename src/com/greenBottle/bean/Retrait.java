@@ -7,7 +7,21 @@ public class Retrait {
 	private int idClient;
 	private Date dateRetrait;
 	private String heureRetrait;
-	private String Statut;
+	private String statut;
+	public int getPoids() {
+		return poids;
+	}
+	public void setPoids(int poids) {
+		this.poids = poids;
+	}
+	public String getCommentaire() {
+		return commentaire;
+	}
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+	private int poids;
+	private String commentaire;
 	
 	public int getId() {
 		return id;
@@ -34,10 +48,10 @@ public class Retrait {
 		this.heureRetrait = heureRetrait;
 	}
 	public String getStatut() {
-		return Statut;
+		return statut;
 	}
 	public void setStatut(String statut) {
-		Statut = statut;
+		this.statut = statut;
 	}
 
 	
