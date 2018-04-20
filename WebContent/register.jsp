@@ -11,11 +11,22 @@
 	<div class="login-page">
 		<div class="form">
 			<form class="register-form">
-				<input type="text" placeholder="name" /> 
-				<input type="password" placeholder="password" /> 
-				<input type="text" placeholder="email address" />
+				<input type="text" placeholder="nom" name="nom"/> <input type="text"
+					placeholder="prénom" name="prenom"/> <input type="text"
+					placeholder="adresse mail" name="mail"/> <input type="password"
+					placeholder="mot de passe" name="password"/>
+				<div>
+					<input type="text" placeholder="n°" name="numero" style="width: 20%" /> <input
+						type="text" placeholder="adresse" name="adresse" style="width: 78%" />
+				</div>
+				<div>
+					<input type="text" value="62000" name="codePostal" disabled style="width: 49%" /> <input
+						type="text" value="Arras" name="ville" disabled style="width: 49%" />
+				</div>
 				<button type="submit">Create</button>
-				<p class="message">Déjà inscrit ? <a href="index.jsp">Se connecter</a></p>
+				<p class="message">
+					Déjà inscrit ? <a href="index.jsp">Se connecter</a>
+				</p>
 			</form>
 		</div>
 	</div>
