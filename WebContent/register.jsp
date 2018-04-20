@@ -5,18 +5,17 @@
 <head>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login GreenBottle</title>
+<title>Inscription GreenBottle</title>
 </head>
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form class="login-form" method="post" action="loginServlet">
-				<input type="text" name="username" placeholder="adresse mail" />
-				<input type="password" name="password" placeholder="mot de passe" />
-				<button type="submit">Connexion</button>
-				<p class="message">
-					Pas inscrit ? <a href="register.jsp">Créer un compte</a>
-				</p>
+			<form class="register-form">
+				<input type="text" placeholder="name" /> 
+				<input type="password" placeholder="password" /> 
+				<input type="text" placeholder="email address" />
+				<button type="submit">Create</button>
+				<p class="message">Déjà inscrit ? <a href="index.jsp">Se connecter</a></p>
 			</form>
 		</div>
 	</div>
