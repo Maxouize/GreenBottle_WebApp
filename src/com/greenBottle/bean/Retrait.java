@@ -5,7 +5,7 @@ import java.util.Date;
 public class Retrait {
 	private int id;
 	private int idClient;
-	private Date dateRetrait;
+	private String dateRetrait;
 	private String heureRetrait;
 	private String statut;
 	public int getPoids() {
@@ -35,10 +35,10 @@ public class Retrait {
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
 	}
-	public Date getDateRetrait() {
+	public String getDateRetrait() {
 		return dateRetrait;
 	}
-	public void setDateRetrait(Date dateRetrait) {
+	public void setDateRetrait(String dateRetrait) {
 		this.dateRetrait = dateRetrait;
 	}
 	public String getHeureRetrait() {

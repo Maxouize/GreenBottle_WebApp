@@ -4,6 +4,7 @@ import com.greenBottle.utils.SqlConnexion;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +16,7 @@ import com.greenBottle.bean.Client;
 public class RetraitDao {
 	
 	public static Retrait fillRetraitWithInfos(ResultSet rs, Retrait retrait) throws SQLException{
-		retrait.setDateRetrait(rs.getDate("date_retrait"));
+		retrait.setDateRetrait(rs.getDate("date_retrait").toString());
 		retrait.setHeureRetrait(rs.getTime("heure_retrait").toString());
 		retrait.setId(rs.getInt("id_retrait"));
 		retrait.setStatut(rs.getString("statut"));
@@ -38,4 +39,15 @@ public class RetraitDao {
 		return listeRetraits;
 	}
 	
+	public static void createRetrait(Retrait retrait, Client client) throws IOException, SQLException{
+		Connection conn = SqlConnexion.getConnection();
+		PreparedStatement ps = conn.prepareStatement("INSERT INTO retraits VALUES (0,?,?,?,?,?,?)");
+		ps.setInt(1, client.getId());
+		ps.setString(2, retrait.getDateRetrait().toString());
+		ps.setString(3, retrait.getHeureRetrait());
+		ps.setInt(4, retrait.getPoids());
+		ps.setString(5, retrait.getCommentaire());
+		ps.setString(6, retrait.getStatut());
+		ps.executeUpdate();
+	}
 }

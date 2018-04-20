@@ -4,6 +4,7 @@
 <html>
 <head>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login GreenBottle</title>
 </head>
@@ -11,7 +12,8 @@
 	<div class="login-page">
 		<div class="form">
 			<form class="login-form" method="post" action="loginServlet">
-				<input type="text" name="username" placeholder="adresse mail" />
+				<p><c:out value="${clientInvalide}"></c:out></p>
+				<input type="text" name="mail" placeholder="adresse mail" />
 				<input type="password" name="password" placeholder="mot de passe" />
 				<button type="submit">Connexion</button>
 				<p class="message">

@@ -10,7 +10,7 @@
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form">
+			<form class="register-form" action="RegisterServlet" method="POST">
 				<input type="text" placeholder="nom" name="nom"/> <input type="text"
 					placeholder="prénom" name="prenom"/> <input type="text"
 					placeholder="adresse mail" name="mail"/> <input type="password"
@@ -20,8 +20,8 @@
 						type="text" placeholder="adresse" name="adresse" style="width: 78%" />
 				</div>
 				<div>
-					<input type="text" value="62000" name="codePostal" disabled style="width: 49%" /> <input
-						type="text" value="Arras" name="ville" disabled style="width: 49%" />
+					<input type="text" value="62000" name="codePostal" readonly="readonly" style="width: 49%" /> <input
+						type="text" value="Arras" name="ville" readonly="readonly" style="width: 49%" />
 				</div>
 				<button type="submit">Create</button>
 				<p class="message">

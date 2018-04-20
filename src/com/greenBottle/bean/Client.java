@@ -7,7 +7,7 @@ public class Client {
 	private int id;
 	private int numeroAdresse;
 	private String nomVoie;
-	private int codePostal;
+	private String codePostal;
 	private String ville;
 	private String adresseMail;
 	private String password;	
@@ -62,11 +62,11 @@ public class Client {
 		this.nomVoie = nomVoie;
 	}
 
-	public int getCodePostal() {
+	public String getCodePostal() {
 		return codePostal;
 	}
 
-	public void setCodePostal(int codePostal) {
+	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
 	

@@ -28,7 +28,7 @@
 				<li><a href="consultation">Mes demandes</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+				<li><a href="modifierProfil.jsp"><span class="glyphicon glyphicon-user"></span>
 						Profil</a></li>
 			</ul>
 		</div>

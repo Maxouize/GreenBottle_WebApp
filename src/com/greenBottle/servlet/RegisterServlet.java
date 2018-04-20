@@ -1,6 +1,5 @@
 package com.greenBottle.servlet;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -9,22 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.greenBottle.bean.Client;
 import com.greenBottle.dao.ClientDao;
 
 /**
- * Servlet implementation class loginServlet
+ * Servlet implementation class RegisterServlet
  */
-@WebServlet("/loginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public RegisterServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,32 +39,27 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("mail");
-		String password = request.getParameter("password");
-		boolean isClient = false;
+		Client nouveauClient = new Client();
+		nouveauClient.setNom(request.getParameter("nom"));
+		nouveauClient.setPrenom(request.getParameter("prenom"));
+		nouveauClient.setAdresseMail(request.getParameter("mail"));
+		nouveauClient.setPassword(request.getParameter("password"));
+		nouveauClient.setNumeroAdresse(Integer.parseInt(request.getParameter("numero")));
+		nouveauClient.setNomVoie(request.getParameter("adresse"));
+		nouveauClient.setVille(request.getParameter("ville"));
+		nouveauClient.setCodePostal(request.getParameter("codePostal"));
 		try {
-			isClient = ClientDao.isClient(username, password);
+			ClientDao.addClient(nouveauClient);
+			request.setAttribute("clientInvalide", "Compte créé avec succès. Veuillez vous connecter");
+			
 		} catch (SQLException e) {
+			request.setAttribute("clientInvalide", "Erreur lors de la création de compte, veuillez reessayer!");
 			e.printStackTrace();
 		}
-		if(isClient){
-			try {
-				Client client = new Client();
-				client = ClientDao.getClientByMailAndPassword(username, password);
-				HttpSession session = request.getSession();
-				session.setAttribute("client", client);
-				response.sendRedirect("accueil.jsp");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		else{
-			request.setAttribute("clientInvalide", "Adresse email / mot de passe incorrect");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-			
-		}
+		request.getRequestDispatcher("modifierProfil.jsp").forward(request, response);
+
 		
-		//doGet(request, response);
+		
 	}
 
 }

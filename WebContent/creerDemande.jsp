@@ -17,29 +17,29 @@
 		<div class="dima-divider topaz-line">
 			<i class="fa fa-stop"></i>
 		</div>
-		<form class="needs-validation formDemande" novalidate>
+		<form class="needs-validation formDemande" action="CreerDemandeServlet" method="POST" novalidate>
 			<div class="form-row">
 				<div class="form-group col-md-12">
 					<p>Date de retrait (obligatoire)</p>
-					<input type="date" required="true" />
+					<input name="dateRetrait" type="date" required="true" />
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-12">
 					<p>Heure de retrait (obligatoire)</p>
-					<input type="time" required="true" />
+					<input name="heureRetrait" type="time" required="true" />
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-12">
 					<p>Poids (kg)</p>
-					<input type="number" required="true" />
+					<input name="poidsRetrait" type="number" required="true" />
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-12">
 					<p>Message</p>
-					<textarea cols="40" rows="10"></textarea>
+					<textarea name="commentaireRetrait" cols="40" rows="10"></textarea>
 				</div>
 			</div>
 			<div style="text-align: center">
