@@ -30,6 +30,7 @@ static Properties prop = new Properties();
 		client.setNumeroAdresse(rs.getInt("num_voie"));
 		client.setVille(rs.getString("ville"));
 		client.setComplement(rs.getString("complement"));
+		client.setPassword(rs.getString("mot_de_passe"));
 		}
 	}
 	

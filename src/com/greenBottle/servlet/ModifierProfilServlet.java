@@ -44,6 +44,12 @@ public class ModifierProfilServlet extends HttpServlet {
 		client.setPrenom(request.getParameter("prenom"));
 		client.setAdresseMail(request.getParameter("mail"));
 		client.setNumeroAdresse(Integer.parseInt(request.getParameter("numero")));
+		if("" != request.getParameter("password")){
+			client.setPassword(request.getParameter("password"));
+		}
+		{
+			client.setPassword(client.getPassword());
+		}
 		client.setNomVoie(request.getParameter("adresse"));
 		client.setVille(request.getParameter("ville"));
 		client.setCodePostal(request.getParameter("codePostal"));

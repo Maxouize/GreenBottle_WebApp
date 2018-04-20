@@ -3,6 +3,7 @@
 	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 <link href="css/marketing.css" rel="stylesheet" type="text/css" />
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -23,13 +24,14 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="accueil.jsp">Acceuil</a></li>
+				<li class="active"><a href="accueil.jsp">Accueil</a></li>
 				<li><a href="creerDemande.jsp">Nouvelle Demande</a></li>
 				<li><a href="consultation">Mes demandes</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.jsp">Me deconnecter</a></li>
 				<li><a href="modifierProfil.jsp"><span class="glyphicon glyphicon-user"></span>
-						Profil</a></li>
+						Modifier mon Profil</a></li>
 			</ul>
 		</div>
 	</div>

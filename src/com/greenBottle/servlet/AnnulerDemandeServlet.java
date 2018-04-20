@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.greenBottle.bean.Retrait;
 import com.greenBottle.dao.RetraitDao;
 
+import jdk.nashorn.internal.runtime.Context;
+
 /**
  * Servlet implementation class AnnulerDemandeServlet
  */
@@ -40,12 +42,11 @@ public class AnnulerDemandeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Retrait retrait = new Retrait();
-		System.out.println(request.getParameter("idRetrait"));
 		retrait.setId(Integer.parseInt(request.getParameter("idRetrait")));
-        retrait.setStatut("Annulé");
+        retrait.setStatut("Annulée");
 		try {
 			RetraitDao.updateRetrait(retrait);
-			response.sendRedirect("/ConsulterDemandeServlet");
+			response.sendRedirect(request.getContextPath() + "/consultation");
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
