@@ -42,7 +42,7 @@ public class AnnulerDemandeServlet extends HttpServlet {
 		Retrait retrait = new Retrait();
 		System.out.println(request.getParameter("idRetrait"));
 		retrait.setId(Integer.parseInt(request.getParameter("idRetrait")));
-		retrait.setStatut("Terminé");
+        retrait.setStatut("Annulé");
 		try {
 			RetraitDao.updateRetrait(retrait);
 			response.sendRedirect("/ConsulterDemandeServlet");

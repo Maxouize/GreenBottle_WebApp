@@ -71,7 +71,7 @@
 }
 
 /* INPUT */
-input[type=text], input[type=date], input[type=time], input[type=number],
+input[type=text], input[type=date], input[type=time], input[type=number],input[type=password],
 	textarea {
 	color: rgba(255, 255, 255, 0.8);
 	border-color: rgba(255, 255, 255, 0.4);
