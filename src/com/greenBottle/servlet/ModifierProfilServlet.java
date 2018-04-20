@@ -39,7 +39,7 @@ public class ModifierProfilServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Client client = new Client();
+		Client client = (Client)request.getSession().getAttribute("client");
 		client.setNom(request.getParameter("nom"));
 		client.setPrenom(request.getParameter("prenom"));
 		client.setAdresseMail(request.getParameter("mail"));
